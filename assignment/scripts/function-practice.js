@@ -177,6 +177,32 @@ console.log('sumAll - Should say 150', sumAll(arrayTest1_numbers));
 console.log('--------------');
 console.log('Question 10 (Stretch Goals)');
 
+function newPositive_array(array){
+  let newPositive=[]
+  let x=0
+  while (x<array.length){
+    if (array[x] > 0) {
+      newPositive.push(array[x])
+      x++
+    } else {
+      x++
+    }
+  }
+  return newPositive
+}
+
+console.log('--First test for Question 10--');
+let Neg_Pos_array = [-5, 5, -4, 4, -3, 3, -2, 2, -1, 1, 0];
+console.log('New Neg_Pos_array equals:',Neg_Pos_array);
+console.log('newPositive_array - Should say [5, 4, 3, 2, 1]:', newPositive_array(Neg_Pos_array));
+console.log('Confirming Neg_Pos_array is not changed, should equal [-5, 5, -4, 4, -3, 3, -2, 2, -1, 1, 0]:',Neg_Pos_array);
+
+console.log('--Second test for Question 10--');
+let Neg_array = [-5, -4, -3, -2, -1];
+console.log('New Neg_array equals:',Neg_array);
+console.log('newPositive_array - Should be an empty array:', newPositive_array(Neg_array));
+console.log('Confirming Neg_array is not changed, should equal [-5, -4, -3, -2, -1]:',Neg_array);
+
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
