@@ -98,12 +98,11 @@ function getLast( array ) {
   return _last_item
 }
 
-let arrayTest1_numbers = [10,20,30,40,50]
-let arrayTest2_animals =['dog', 'cat', 'fish', 'hedgehog', 'dolphin']
-let arrayTest3_empty=[]
+let arrayTest1_numbers = [10,20,30,40,50];
+let arrayTest2_animals = ['dog', 'cat', 'fish', 'hedgehog', 'dolphin'];
+
 console.log('getLast - Should say 50:', getLast(arrayTest1_numbers));
 console.log('getLast - Should say dolphin:', getLast(arrayTest2_animals));
-console.log('getLast - Should say undefined:', getLast(arrayTest3_empty));
 
 
 
@@ -113,21 +112,21 @@ console.log('getLast - Should say undefined:', getLast(arrayTest3_empty));
 console.log('--------------');
 console.log('Question 7');
 
-function find( value, array ){
-  for (let i=0; i=array.length-1; i++) {
-    if (!array.length === true) {
-      console.log('This is an empty array, as such', value, 'is not included.');
-      return false
-    } else {
-      console.log('The value of this array at', value, 'is', array[value]);
-      return true
-    }
+function find( Searching_array, value_to_find ){
+  for (let i=0; i<Searching_array.length; i++) {
+    if (value_to_find === Searching_array[i]) {
+      console.log(value_to_find, 'is a part of', Searching_array, ' at array.length='+ i);
+      return true 
+    } 
   }
+  console.log(value_to_find, 'is not a part of', Searching_array);
+  return false
 }
 
-console.log('Above should say 20, side should say true:', find(1,arrayTest1_numbers));
-console.log('Above should say dog, side should say true:', find(0,arrayTest2_animals));
-console.log('Above should say undefined and "This is an empty array, as such (3) is not included", side should say false:', find(3,arrayTest3_empty));
+console.log('find - should say true:', find(arrayTest1_numbers,50));
+console.log('find - should say false:', find(arrayTest1_numbers,60));
+console.log('find - Should say true:', find(arrayTest2_animals,'dog'));
+console.log('find - Should say false:', find(arrayTest2_animals,'bird'));
 
 
 
