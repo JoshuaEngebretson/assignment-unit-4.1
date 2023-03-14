@@ -156,6 +156,8 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 console.log('--------------');
 console.log('Question 9 (Stretch Goals)');
 
+let arrayTest2_numbers = [20,30,40,-90];
+
 function sumAll(array) {
   let sum = 0
   let x=0
@@ -166,7 +168,9 @@ function sumAll(array) {
   }
   return sum
 }
-console.log('sumAll - Should say 150', sumAll(arrayTest1_numbers));
+
+console.log('sumAll - Should say 150:', sumAll(arrayTest1_numbers));
+console.log('sumAll - Should say 0:', sumAll(arrayTest2_numbers));
 
 
 
