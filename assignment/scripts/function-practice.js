@@ -20,19 +20,19 @@ console.log('Question 2');
 
 function helloName( name ) {
   if (name === 'Joshua') {
-    console.log('Hello', name+ ', nice to meet you.');    
+    return 'Hello '+name+", nice to meet you."  
   } else if (name === 'Brooke') {
-    console.log('Hello', name+ ", you're pretty cool."); 
+    return 'Hello '+name+ ", you're pretty cool."
   } else {
-    console.log('Hello', name);
+    return 'Hello '+name
   }
 }
 
 // Remember to call the function to test
-console.log('Question 2 Test - The above message should say "Hello, Joshua, nice to meet you."', helloName ('Joshua'));
-console.log("The above message should say 'Hello, Brooke, you're pretty cool.'", helloName('Brooke'));
-console.log('The above message should say "Hello, Alex"', helloName ('Alex'));
-console.log('The above message should say "Hello, Steven"', helloName ('Steven'));
+console.log('helloName - Should say "Hello, Joshua, nice to meet you." ---', helloName ('Joshua'));
+console.log("helloName - Should say 'Hello, Brooke, you're pretty cool.' ---", helloName('Brooke'));
+console.log('helloName - Should say "Hello, Alex" ---', helloName ('Alex'));
+console.log('helloName - Should say "Hello, Steven" ---', helloName ('Steven'));
 
 
 
@@ -46,8 +46,8 @@ function addNumbers( firstNumber, secondNumber ) {
   return answer
 }
 
-console.log('Should state 36 (30+6):', addNumbers(30,6));
-console.log('Should state 12 (9+3):', addNumbers(9,3));
+console.log('addNumbers - Should state 36 (30+6):', addNumbers(30,6));
+console.log('addNumbers - Should state 12 (9+3):', addNumbers(9,3));
 
 
 
@@ -74,14 +74,10 @@ console.log('Question 5');
 
 function isPositive( number ) {
   if ( number > 0 ){
-    console.log(number,'is a positive number');
     return true;
-  } else if (number === 0) {
-    console.log(number, 'is neither positive or negative');
+  } else if (number === 0 || number < 0) {
     return false
   }
-    console.log(number, 'is a negative number');
-    return false;
 }
 
 // Call the function to test each outcome (true & false) 
@@ -102,12 +98,12 @@ function getLast( array ) {
   return _last_item
 }
 
-let arrayTest = [11,21,31,41,51]
+let arrayTest1_numbers = [10,20,30,40,50]
 let arrayTest2_animals =['dog', 'cat', 'fish', 'hedgehog', 'dolphin']
-let arrayTest3=[]
-console.log('Testing - Should say 50:', getLast(arrayTest));
-console.log('Testing - Should say dolphin:', getLast(arrayTest2_animals));
-console.log('Testing - Should say undefined:', getLast(arrayTest3));
+let arrayTest3_empty=[]
+console.log('getLast - Should say 50:', getLast(arrayTest1_numbers));
+console.log('getLast - Should say dolphin:', getLast(arrayTest2_animals));
+console.log('getLast - Should say undefined:', getLast(arrayTest3_empty));
 
 
 
@@ -129,9 +125,9 @@ function find( value, array ){
   }
 }
 
-console.log('Above should say 21, side should say true:', find(1,arrayTest));
+console.log('Above should say 20, side should say true:', find(1,arrayTest1_numbers));
 console.log('Above should say dog, side should say true:', find(0,arrayTest2_animals));
-console.log('Above should say undefined and "This is an empty array, as such (3) is not included", side should say false:', find(3,arrayTest3));
+console.log('Above should say undefined and "This is an empty array, as such (3) is not included", side should say false:', find(3,arrayTest3_empty));
 
 
 
@@ -161,11 +157,17 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 console.log('--------------');
 console.log('Question 9 (Stretch Goals)');
 
-function sumAll( ) {
+function sumAll(array) {
   let sum = 0
+  let x=0
   // TODO: loop to add items
-  return sum;
+  while (x < array.length) {
+    sum += array[x]
+    x++
+  }
+  return sum
 }
+console.log('sumAll - Should say 150', sumAll(arrayTest1_numbers));
 
 
 
