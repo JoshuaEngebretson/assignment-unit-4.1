@@ -162,7 +162,7 @@ let arrayTest2_numbers = [20,30,40,-90];
 
 function sumAll(array) {
   let sum = 0
-  let x=0
+  let x = 0
   // TODO: loop to add items
   while (x < array.length) {
     sum += array[x]
@@ -183,9 +183,9 @@ console.log('--------------');
 console.log('Question 10 (Stretch Goals)');
 
 function newPositive_array(array){
-  let newPositive=[]
-  let x=0
-  while (x<array.length){
+  let newPositive = []
+  let x = 0
+  while (x < array.length){
     if (array[x] > 0) {
       newPositive.push(array[x])
       x++
@@ -215,3 +215,20 @@ console.log('Confirming Neg_array is not changed, should equal [-5, -4, -3, -2, 
 //     here in a comment, write the function, and test it!
 console.log('--------------');
 console.log('Question 11 (Stretch Goals)');
+
+// Convert Minutes into Seconds
+// Write a function that takes an integer minutes and converts it to seconds.
+
+//There are 60 seconds in a minute. My code take the minutes argument and multiplies 
+//it by 60 to return how many seconds there are in a given number of minutes.
+
+function convertMinutes_to_Seconds(minutes) {
+  let seconds = 0;
+  seconds = minutes * 60
+  return seconds
+}
+
+console.log('convertMinutes_to_Seconds - Expected 240:', convertMinutes_to_Seconds(4));
+console.log('convertMinutes_to_Seconds - Expected 600:', convertMinutes_to_Seconds(10));
+console.log('convertMinutes_to_Seconds - Expected 630:', convertMinutes_to_Seconds(10.5));
+
