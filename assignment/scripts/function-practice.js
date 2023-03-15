@@ -63,7 +63,7 @@ function multiplyThree( num01, num02, num03 ){
 console.log('Should state 6 (1*2*3):', multiplyThree(1,2,3));
 console.log('Should state 24 (2*3*4):', multiplyThree(2,3,4));
 console.log('Should state 60 (3*4*5):', multiplyThree(3,4,5));
-console.log('Should state 120 (4*5*6):', multiplyThree(4,5,6));
+console.log('Should state -120 (4*5*-6):', multiplyThree(4,5,-6));
 
 
 
@@ -74,10 +74,11 @@ console.log('Question 5');
 
 function isPositive( number ) {
   if ( number > 0 ){
+    console.log(number, 'is a positive number');
     return true;
-  } else if (number === 0 || number < 0) {
-    return false
-  }
+  } 
+  console.log(number, 'is NOT a positive number');
+  return false
 }
 
 // Call the function to test each outcome (true & false) 
@@ -94,15 +95,17 @@ console.log('--------------');
 console.log('Question 6');
 
 function getLast( array ) {
-  let _last_item= array[array.length-1]
-  return _last_item
+  let last_item= array[array.length-1]
+  return last_item
 }
 
 let arrayTest1_numbers = [10,20,30,40,50];
 let arrayTest2_animals = ['dog', 'cat', 'fish', 'hedgehog', 'dolphin'];
+let empty_array=[]
 
 console.log('getLast - Should say 50:', getLast(arrayTest1_numbers));
 console.log('getLast - Should say dolphin:', getLast(arrayTest2_animals));
+console.log('getLast - Should say undefined:', getLast(empty_array));
 
 
 
@@ -143,10 +146,9 @@ function isFirstLetter(letter, string) {
   if (letter === firstChar) {
     return true
   }
-  else {
-    return false;
-  }
+  return false
 }
+
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
